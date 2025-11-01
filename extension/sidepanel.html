@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>QuickBite – Comer agora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        width: 360px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        padding: 14px 16px 8px;
+        background: radial-gradient(circle at top, #f97316 0%, #0f172a 50%);
+      }
+      h1 {
+        font-size: 1.1rem;
+        margin: 0;
+      }
+      main {
+        flex: 1;
+        overflow-y: auto;
+        padding: 12px 14px 12px;
+      }
+      .card {
+        background: rgba(15, 23, 42, 0.4);
+        border-radius: 14px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .title {
+        font-weight: 600;
+      }
+      .meta {
+        font-size: 0.7rem;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🍴 QuickBite</h1>
+      <div id="ctx-line">Detectando página...</div>
+    </header>
+    <main id="list">
+      <div class="card">
+        <div class="title">Sugestões vão aparecer aqui</div>
+        <div class="meta">
+          Clique no botão flutuante "Comer agora" na página.
+        </div>
+      </div>
+    </main>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

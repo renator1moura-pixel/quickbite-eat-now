@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "Comer Agora – Restaurantes perto de mim",
+  "version": "1.2.0",
+  "description": "Um clique abre restaurantes perto de mim no Google Maps, já com filtros. Atalhos e preferências locais. Sem coleta de dados.",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/*",
+        "https://www.google.com.br/*",
+        "https://www.google.com.mx/*",
+        "https://www.google.com.ar/*",
+        "https://www.google.co/*",
+        "https://www.google.co.uk/*",
+        "https://www.google.ca/*",
+        "https://www.google.com.au/*",
+        "https://www.google.de/*",
+        "https://www.google.es/*",
+        "https://www.google.fr/*",
+        "https://www.google.it/*",
+        "https://www.google.pt/*"
+      ],
+      "js": [
+        "maps.js",
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "commands": {
+    "open_default": {
+      "suggested_key": {
+        "default": "Alt+Shift+R"
+      },
+      "description": "Abrir restaurantes perto de mim"
+    },
+    "open_open_now": {
+      "suggested_key": {
+        "default": "Alt+Shift+O"
+      },
+      "description": "Abrir abertos agora"
+    },
+    "open_high_rating": {
+      "suggested_key": {
+        "default": "Alt+Shift+A"
+      },
+      "description": "Abrir com nota alta"
+    }
+  },
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ]
+}
